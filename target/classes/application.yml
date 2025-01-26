@@ -1,0 +1,25 @@
+server:
+  port: 16000
+  servlet:
+    context-path: /
+
+spring:
+  datasource:
+    #    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/wdyin?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&allowMultiQueries=true&connectTimeout=300000&socketTimeout=600000
+    username: root
+    password: root
+    maxLifetime: 1000000
+    maximumPoolSize: 10
+    poolName: wdy
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    global-config:
+      db-config:
+        logic-delete-field: delFlag
+        logic-delete-value: 1
+        logic-not-delete-value: 0
