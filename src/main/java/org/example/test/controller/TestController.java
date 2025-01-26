@@ -30,7 +30,7 @@ public class TestController {
     public void batch() {
         List<Dept> depts = new ArrayList<>();
         depts.add(new Dept());
-        // 无法插入HaiCloudMetaObjectHandler设置的创建人和创建时间
+        // 无法插入MyMetaObjectHandler设置的创建人和创建时间
         deptMapper.insertBatchSomeColumn(depts);
     }
 }
